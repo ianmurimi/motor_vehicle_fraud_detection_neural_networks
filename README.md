@@ -1,7 +1,14 @@
-This project focuses on binary classification for motor vehicle insurance claims, where the objective is to categorize each claim as either Fraud (1) or Non-fraud (0). The training dataset is highly imbalanced, with 6,091 instances labeled as non-fraud and only 372 labeled as fraud. To address this imbalance, a combination of techniques has been applied to generate synthetic fraud images and create a more balanced dataset for training.
+This project focuses on binary classification for motor vehicle insurance claims, where the goal is to classify each claim as either Fraud (1) or Non-fraud (0). The training dataset is highly imbalanced, with 6,091 non-fraud cases and only 372 fraud cases. To address this, I employed a combination of techniques to generate synthetic fraud images and create a more balanced dataset for training.
 
-To tackle the challenge of limited fraud data, traditional data augmentation methods were used alongside Generative Adversarial Networks (GANs). GANs were employed to generate synthetic fraud images, enriching the minority class with realistic yet artificially created examples. Additionally, SMOTE (Synthetic Minority Oversampling Technique) was used to further address the imbalance by generating synthetic samples from the existing fraud cases. These approaches help ensure that the model does not become biased toward the majority class and performs better in predicting fraudulent cases.
+To overcome the data imbalance, traditional data augmentation methods were used alongside Generative Adversarial Networks (GANs), which were specifically employed to generate synthetic fraud images. Additionally, SMOTE (Synthetic Minority Oversampling Technique) was applied to further augment the fraud class by generating synthetic samples based on the existing ones. These methods prevent the model from becoming biased toward the majority class, improving its ability to accurately predict fraudulent claims.
 
-The dataset used for this project is publicly available on Kaggle: Vehicle Insurance Fraud Classification. Various data balancing techniques, such as GAN, SMOTE, and traditional augmentation, were implemented to ensure that the model can learn effectively from both the minority and majority classes.
+Each of these balancing techniques was implemented in dedicated notebooks, named as follows:
 
-This project highlights the importance of addressing data imbalance in fraud detection tasks. By generating synthetic fraud samples, the model becomes more robust, improving its ability to detect fraudulent claims without being overwhelmed by the dominant non-fraud class. This balanced approach leads to better generalization and more accurate predictions when deployed in real-world scenarios.
+	•	Traditional Data Augmentation: aug_cnn_model_refresh.ipynb
+	•	SMOTE: smote_cnn_model_refresh.ipynb
+	•	GAN: gan_cnn_model_refresh.ipynb
+	•	Combination of Traditional Augmentation and GAN: cnn_model_refresh.ipynb
+
+The dataset used for this project is publicly available on Kaggle: Vehicle Insurance Fraud Classification. By applying these various balancing techniques, the model was trained on a more equitable representation of both fraud and non-fraud cases, mitigating the risk of overfitting to the majority class.
+
+Addressing data imbalance is crucial in fraud detection tasks, as it helps the model generalize better and make accurate predictions on both minority and majority classes. The combination of traditional augmentation, GAN, and SMOTE resulted in a robust model capable of detecting fraudulent claims more effectively.
